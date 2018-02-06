@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './config/environments' #database configuration
-require './models/model'
+require './config/environments'
 require './models/person'
 require './models/event'
 require './models/registration'
