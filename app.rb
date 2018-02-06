@@ -4,6 +4,7 @@ require './config/environments' #database configuration
 require './models/model'
 require './models/person'
 require './models/event'
+require './models/registration'
 require 'byebug'
 
 get '/' do
@@ -18,9 +19,12 @@ get '/event/new' do
 	erb :new_event
 end
 
+get '/registration/new' do
+	erb :new_registration
+end
+
 
 post '/person/new' do
-
 	@person = Person.new(params[:person])
 	if @person.save
 		redirect '/people'
@@ -38,6 +42,15 @@ post '/event/new' do
 	end
 end
 
+post '/registrstion/new' do
+	@registration = Registration.new(params[:registration])
+	if @registration.save
+		redirect '/registrations'
+	else
+		"Sorry, there was an error!"
+	end
+end
+
 get '/people' do
 	@people = Person.all
 	erb :people
@@ -46,4 +59,9 @@ end
 get '/events' do
 	@events = Event.all
 	erb :events
+end
+
+get '/registrations' do
+	@registrations = Registration.all
+	erb :registrations
 end

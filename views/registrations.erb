@@ -1,0 +1,16 @@
+<h3>Registrations:</h3>
+
+<ol>
+  <%@registrations.each do |reg|%>
+  <li>
+    Person: <%= reg.person_name %><br>
+    RSVP: <%= reg.rsvp %><br>
+    Event: <%= reg.event_name %><br>
+    <br>
+  </li>
+  <%end%>
+</ol>
+
+<a href="/registration/new">Make another registration</a>
+<br>
+<a href="/">Home</a>
