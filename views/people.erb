@@ -1,14 +1,17 @@
-<h4> HERE ARE ALL THE PEOPLE!!!!!!!!!</h4>
+<h3> People:</h3>
 
   <ol>
     <%@people.each do |person|%>
     <li>
-      <%= person.name %>
-      <%= person.birthday %>
-      <%= person.gender %>
-      <%= person.zipcode %>
+      <strong>Name: <%= person.name %></strong><br>
+      Birthday: <%= person.birthday %><br>
+      Gender: <%= person.gender %><br>
+      Zipcode: <%= person.zipcode %><br>
+      <br>
     </li>
     <%end%>
   </ol>
 
-  <a href="/">Add another person</a>
+  <a href="/person/new">Add another person</a>
+  <br>
+  <a href="/">Home</a>

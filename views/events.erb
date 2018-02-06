@@ -1,0 +1,15 @@
+<h3>Events:</h3>
+
+<ol>
+  <%@events.each do |event|%>
+  <li>
+    <strong>Name: <%= event.name %></strong><br>
+    Date: <%= event.date %><br>
+    <br>
+  </li>
+  <%end%>
+</ol>
+
+<a href="/event/new">Create another event</a>
+<br>
+<a href="/">Home</a>
