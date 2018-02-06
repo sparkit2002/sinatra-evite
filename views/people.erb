@@ -1,13 +1,14 @@
-<h3>These are the Models!</h3>
-<ol>
-  <% i = 0 %>
-<% @people.each do |pers| %>
-	<li>
-    ......
-		<strong><%= pers.name %></strong>
-    .....
-    <%= pers.birthday %>
-	</li>
-<% end %>
-</ol>
-<a href="/">Hello go back to add a new one!</a>
+<h4> HERE ARE ALL THE PEOPLE!!!!!!!!!</h4>
+
+  <ol>
+    <%@people.each do |person|%>
+    <li>
+      <%= person.name %>
+      <%= person.birthday %>
+      <%= person.gender %>
+      <%= person.zipcode %>
+    </li>
+    <%end%>
+  </ol>
+
+  <a href="/">Add another person</a>

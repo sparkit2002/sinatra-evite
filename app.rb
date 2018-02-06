@@ -1,23 +1,25 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require './config/environments' #database configuration
+require './models/model'
 require './models/person'
-require './models/department'
-require 'byebug'
+require 'byebug'       #Model class
 
 get '/' do
-  erb :index
+	erb :index
 end
 
 post '/submit' do
-  @person = Person.new(params[:person])
-  if @person.save
-    redirect '/people'
-  else
-    "Sorry, there was an error!"
-  end
+
+	@person = Person.new(params[:person])
+	if @person.save
+		redirect '/models'
+	else
+		"Sorry, there was an error!"
+	end
 end
 
-get '/people' do
-  @people = Person.all
-  erb :people
+get '/models' do
+	@people = Person.all
+	erb :people
 end
